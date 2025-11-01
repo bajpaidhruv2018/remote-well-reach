@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { Heart, BookOpen, MapPin, Users, Smartphone, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import heroImage from "@/assets/hero-healthcare.jpg";
-import communityImage from "@/assets/community-learning.jpg";
-import elderImage from "@/assets/elder-phone.jpg";
+import heroImage from "@/assets/rural-healthcare.jpg";
+import communityImage from "@/assets/healthcare-clinic.jpg";
+import elderImage from "@/assets/mobile-clinic.jpg";
 
 const Home = () => {
   return (
