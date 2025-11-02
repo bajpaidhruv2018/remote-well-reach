@@ -8,6 +8,7 @@ const navItems = [
   { name: "Health Education", path: "/education" },
   { name: "Find Healthcare", path: "/healthcare" },
   { name: "Digital Literacy", path: "/literacy" },
+  { name: "Health Myths", path: "/misconceptions" },
   { name: "Emergency", path: "/emergency" },
 ];
 
