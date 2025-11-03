@@ -93,7 +93,7 @@ const HealthChatbot = () => {
   return (
     <>
       {/* Floating Chat Button */}
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className="fixed bottom-24 right-6 z-50">
         {!isOpen && (
           <Button
             onClick={() => setIsOpen(true)}
@@ -107,7 +107,7 @@ const HealthChatbot = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-96 max-w-[calc(100vw-3rem)] animate-scale-in">
+        <div className="fixed bottom-24 right-6 z-50 w-96 max-w-[calc(100vw-3rem)] animate-scale-in">
           <div className="bg-background border-2 border-primary/20 rounded-2xl shadow-elegant overflow-hidden flex flex-col h-[600px] max-h-[calc(100vh-3rem)]">
             {/* Header */}
             <div className="bg-gradient-to-r from-primary to-primary-light text-primary-foreground p-4 flex items-center justify-between">
