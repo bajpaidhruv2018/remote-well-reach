@@ -4,25 +4,25 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
-const MAGNETIC_DISTANCE = 5; // Max pixels button can move
+const MAGNETIC_DISTANCE = 6; // Max pixels button can move
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-5 [&_svg]:shrink-0 relative overflow-hidden",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-bold transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-5 [&_svg]:shrink-0 relative overflow-hidden active:scale-95 active:brightness-90",
   {
     variants: {
       variant: {
-        default: "bg-gradient-primary text-primary-foreground hover:opacity-90 shadow-soft hover:shadow-lg",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border-2 border-primary bg-background text-primary hover:bg-primary hover:text-primary-foreground",
-        secondary: "bg-gradient-secondary text-secondary-foreground hover:opacity-90 shadow-soft hover:shadow-lg",
+        default: "bg-gradient-primary text-white shadow-[0_4px_10px_rgba(0,0,0,0.1)] hover:brightness-110 hover:shadow-[0_6px_16px_rgba(0,0,0,0.15),inset_0_1px_3px_rgba(255,255,255,0.3)]",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-[0_4px_10px_rgba(0,0,0,0.1)]",
+        outline: "border-2 border-primary bg-background text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-150",
+        secondary: "bg-gradient-secondary text-white shadow-[0_4px_10px_rgba(0,0,0,0.1)] hover:brightness-110 hover:shadow-[0_6px_16px_rgba(0,0,0,0.15),inset_0_1px_3px_rgba(255,255,255,0.3)]",
         ghost: "hover:bg-muted hover:text-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         soft: "bg-muted text-foreground hover:bg-muted/80",
       },
       size: {
         default: "h-12 px-6 py-3 text-base",
-        sm: "h-10 rounded-lg px-4 text-sm",
-        lg: "h-14 rounded-xl px-8 text-lg",
+        sm: "h-10 px-4 text-sm",
+        lg: "h-14 px-8 text-lg",
         icon: "h-12 w-12",
       },
     },
@@ -68,7 +68,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       });
 
       setSpotlightStyle({
-        background: `radial-gradient(circle at ${e.clientX - rect.left}px ${e.clientY - rect.top}px, rgba(255,255,255,0.15), transparent 60%)`,
+        background: `radial-gradient(circle at ${e.clientX - rect.left}px ${e.clientY - rect.top}px, rgba(255,255,255,0.2), transparent 65%)`,
       });
     };
 
