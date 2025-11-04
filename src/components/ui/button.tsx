@@ -7,23 +7,25 @@ import { cn } from "@/lib/utils";
 const MAGNETIC_DISTANCE = 6; // Max pixels button can move
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-bold transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-5 [&_svg]:shrink-0 relative overflow-hidden active:scale-95 active:brightness-90",
+  "inline-flex items-center justify-center gap-3 whitespace-nowrap text-sm font-bold transition-all duration-150 focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring focus-visible:ring-offset-[3px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-5 [&_svg]:shrink-0 relative overflow-hidden active:translate-y-[2px]",
   {
     variants: {
       variant: {
-        default: "bg-gradient-primary text-white shadow-[0_4px_10px_rgba(0,0,0,0.1)] hover:brightness-110 hover:shadow-[0_6px_16px_rgba(0,0,0,0.15),inset_0_1px_3px_rgba(255,255,255,0.3)]",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-[0_4px_10px_rgba(0,0,0,0.1)]",
-        outline: "border-2 border-primary bg-background text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-150",
-        secondary: "bg-gradient-secondary text-white shadow-[0_4px_10px_rgba(0,0,0,0.1)] hover:brightness-110 hover:shadow-[0_6px_16px_rgba(0,0,0,0.15),inset_0_1px_3px_rgba(255,255,255,0.3)]",
-        ghost: "hover:bg-muted hover:text-foreground",
+        default: "rounded-[16px] bg-gradient-primary text-white shadow-[0_2px_0_rgba(0,0,0,0.1),0_4px_12px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.25)] hover:shadow-[0_2px_0_rgba(0,0,0,0.1),0_6px_20px_rgba(0,0,0,0.2),0_0_20px_rgba(76,175,80,0.3),inset_0_1px_0_rgba(255,255,255,0.25)] hover:brightness-110 active:shadow-[0_1px_0_rgba(0,0,0,0.1),0_2px_8px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.15)]",
+        destructive: "rounded-[16px] bg-destructive text-destructive-foreground shadow-[0_2px_0_rgba(0,0,0,0.1),0_4px_12px_rgba(0,0,0,0.15)] hover:bg-destructive/90 hover:shadow-[0_2px_0_rgba(0,0,0,0.1),0_6px_20px_rgba(0,0,0,0.2)] active:shadow-[0_1px_0_rgba(0,0,0,0.1),0_2px_8px_rgba(0,0,0,0.15)]",
+        outline: "rounded-[16px] border-2 border-primary bg-background text-primary shadow-[0_2px_0_rgba(0,0,0,0.05),0_2px_8px_rgba(0,0,0,0.08)] hover:bg-primary hover:text-primary-foreground hover:shadow-[0_2px_0_rgba(0,0,0,0.1),0_4px_16px_rgba(0,0,0,0.12)] active:shadow-[0_1px_0_rgba(0,0,0,0.1),0_2px_6px_rgba(0,0,0,0.1)]",
+        secondary: "rounded-[16px] bg-gradient-secondary text-white shadow-[0_2px_0_rgba(0,0,0,0.1),0_4px_12px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.25)] hover:shadow-[0_2px_0_rgba(0,0,0,0.1),0_6px_20px_rgba(0,0,0,0.2),0_0_20px_rgba(33,150,243,0.3),inset_0_1px_0_rgba(255,255,255,0.25)] hover:brightness-110 active:shadow-[0_1px_0_rgba(0,0,0,0.1),0_2px_8px_rgba(0,0,0,0.15),inset_0_1px_0_rgba(255,255,255,0.15)]",
+        glass: "rounded-[20px] bg-background/60 backdrop-blur-md text-foreground border-[2px] border-transparent shadow-[0_2px_0_rgba(0,0,0,0.05),0_4px_16px_rgba(0,0,0,0.1)] hover:shadow-[0_2px_0_rgba(0,0,0,0.1),0_6px_24px_rgba(0,0,0,0.15),0_0_24px_rgba(76,175,80,0.2)] active:shadow-[0_1px_0_rgba(0,0,0,0.1),0_2px_12px_rgba(0,0,0,0.12)] [background-image:linear-gradient(135deg,hsl(var(--primary))_0%,hsl(var(--secondary))_100%)] [background-origin:border-box] [background-clip:padding-box,border-box]",
+        tonal: "rounded-[14px] bg-primary/10 text-primary shadow-[0_1px_0_rgba(0,0,0,0.03),0_2px_6px_rgba(0,0,0,0.06),inset_0_-1px_0_hsl(var(--primary)/0.2)] hover:bg-primary/15 hover:shadow-[0_1px_0_rgba(0,0,0,0.05),0_3px_10px_rgba(0,0,0,0.08),inset_0_-1px_0_hsl(var(--primary)/0.3)] active:shadow-[0_1px_0_rgba(0,0,0,0.05),0_1px_4px_rgba(0,0,0,0.06),inset_0_-1px_0_hsl(var(--primary)/0.15)]",
+        ghost: "rounded-[12px] hover:bg-muted hover:text-foreground hover:shadow-[0_1px_0_rgba(0,0,0,0.03),0_2px_8px_rgba(0,0,0,0.06)]",
         link: "text-primary underline-offset-4 hover:underline",
-        soft: "bg-muted text-foreground hover:bg-muted/80",
+        soft: "rounded-[14px] bg-muted text-foreground shadow-[0_1px_0_rgba(0,0,0,0.03),0_2px_6px_rgba(0,0,0,0.05)] hover:bg-muted/80 hover:shadow-[0_1px_0_rgba(0,0,0,0.05),0_3px_10px_rgba(0,0,0,0.08)]",
       },
       size: {
-        default: "h-12 px-6 py-3 text-base",
-        sm: "h-10 px-4 text-sm",
-        lg: "h-14 px-8 text-lg",
-        icon: "h-12 w-12",
+        default: "min-h-[44px] px-6 py-3 text-base",
+        sm: "min-h-[40px] px-4 py-2 text-sm",
+        lg: "min-h-[48px] px-8 py-4 text-lg",
+        icon: "min-h-[44px] min-w-[44px] p-0",
       },
     },
     defaultVariants: {
