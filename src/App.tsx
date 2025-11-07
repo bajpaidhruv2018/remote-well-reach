@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import SOSButton from "./components/SOSButton";
 import WelcomePopup from "./components/WelcomePopup";
 import HealthChatbot from "./components/HealthChatbot";
+import { GlobalTTSPlayer } from "./components/GlobalTTSPlayer";
 import Home from "./pages/Home";
 import Education from "./pages/Education";
 import Healthcare from "./pages/Healthcare";
@@ -53,6 +54,7 @@ const App = () => {
               <SOSButton />
               <WelcomePopup />
               <HealthChatbot />
+              <GlobalTTSPlayer />
             </div>
           </BrowserRouter>
         </TooltipProvider>
